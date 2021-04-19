@@ -1,6 +1,8 @@
 package com.keysoft.mongodb.model;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -16,7 +18,8 @@ public class Application {
     public Application() {
     }
 
-    public Application(String id, String name, String owner,
+    @PersistenceConstructor
+    public Application(String id, String name,@Value("#root.owner ?: 'unassigned'") String owner,
                        String description) {
         this.id = id;
         this.name = name;
