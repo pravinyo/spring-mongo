@@ -83,6 +83,11 @@ public class TzaController {
         ticketRepository.deleteById(id);
     }
 
+    @GetMapping(value = "/tickets/status/{status}")
+    public List<Ticket> findByStatus(@PathVariable("status") String status){
+        return ticketRepository.findByStatus(status);
+    }
+
     // ************** Methods for Releases *************************
     @RequestMapping(value = "/releases", method = RequestMethod.GET)
     public List<Release> getAllReleases() {
