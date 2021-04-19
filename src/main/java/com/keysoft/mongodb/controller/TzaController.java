@@ -51,6 +51,11 @@ public class TzaController {
         applicationRepository.deleteById(id);
     }
 
+    @RequestMapping(value = "/applications/name/{name}", method = RequestMethod.GET)
+    public List<Application> findByName(@PathVariable("name") String name) {
+        return applicationRepository.findByName(name);
+    }
+
     // ************** Methods for Tickets *************************
     @RequestMapping(value = "/tickets", method = RequestMethod.GET)
     public List<Ticket> getAllTickets() {
