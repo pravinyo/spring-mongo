@@ -1,0 +1,738 @@
+{
+	"info": {
+		"name": "MongoDB",
+		"_postman_id": "c5fc26ef-414d-c5c5-9caa-4aaf1388a29e",
+		"description": "Pluralsight \"Spring Data Mongo: Getting Started\" Course",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/tza/applications/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/applications/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"applications",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/applications/5cad160a8b18c16c1d901b83",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/applications/5cad160a8b18c16c1d901b83",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"applications",
+						"5cad160a8b18c16c1d901b83"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/applications/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Notifications\",\n    \"description\":\"App to send emails\",\n    \"owner\":\"Karen Jones\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/applications/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"applications",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/applications/create (No owner)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Notifications\",\n    \"description\":\"App to send emails\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/applications/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"applications",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/applications/5c98ea55e5a85a2435d4cbc7",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Expenses 2.0\",\n    \"description\":\"Track business expenses\",\n    \"owner\":\"Mary Richards\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/applications/5c98ea55e5a85a2435d4cbc7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"applications",
+						"5c98ea55e5a85a2435d4cbc7"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/applications/5c98ea55e5a85a2435d4cbc7",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/applications/5c98ea55e5a85a2435d4cbc7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"applications",
+						"5c98ea55e5a85a2435d4cbc7"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/applications/name/Expenses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/applications/name/Expenses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"applications",
+						"name",
+						"Expenses"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/applications/template",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Training Guide\",\n    \"description\":\"Guide that helps with learning.\",\n    \"owner\":\"Jerry Jones\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/applications/template",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"applications",
+						"template"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/applications/template/name/5c98ea55e5a85a2435d4cbc5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/applications/template/name/5c98ea55e5a85a2435d4cbc5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"applications",
+						"template",
+						"name",
+						"5c98ea55e5a85a2435d4cbc5"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/applications/template",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\" : \"5c9e42924f29ee451aca366b\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/applications/template",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"applications",
+						"template"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/applications/template",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Training Guide\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/applications/template",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"applications",
+						"template"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/tickets/count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/tickets/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"tickets",
+						"count"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"tickets"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/tickets",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"Add email as notifications\",\n    \"description\":\"In addition to text message we need email notifications\",\n    \"appId\":\"5c99008f4f29ee062a058209\",\n    \"status\":\"Open\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"tickets"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/tickets/status/Open",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/tickets/status/Open",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"tickets",
+						"status",
+						"Open"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/tickets/appId/5cad160a8b18c16c1d901b83",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/tickets/appId/5cad160a8b18c16c1d901b83",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"tickets",
+						"appId",
+						"5cad160a8b18c16c1d901b83"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/releases",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/releases",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"releases"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/releases/tickets",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"January Release\",\n    \"description\":\"The first release to include high priority.\",\n    \"tickets\":[\n    \t{\n          \t\"title\":\"Fix Bug on Save\",\n          \t\"description\":\"There is an error when saving a record with no email address.\",\n          \t\"appId\":\"5cad160a8b18c16c1d901b85\",\n          \t\"status\":\"In Process\"\n          }, \n          {\n          \t\"title\":\"Add API access\",\n          \t\"description\":\"The Trackzilla data should be available via an API call.\",\n          \t\"appId\":\"5cad160a8b18c16c1d901b83\",\n          \t\"status\":\"Open\"\n          }, \n          {\n          \t\"title\":\"Database migration\",\n          \t\"description\":\"Migrate data from Oracle to MongoDB.\",\n          \t\"appId\":\"5cad160a8b18c16c1d901b83\",\n          \t\"status\":\"Open\"\n          }, \n          {\n          \t\"title\":\"Code coverage\",\n          \t\"description\":\"Ensure full code coverage\",\n          \t\"appId\":\"5cad160a8b18c16c1d901b83\",\n          \t\"status\":\"Open\"\n          }\n        ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/releases/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"releases",
+						"tickets"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/releases/tickets (w/releaseDate)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"September Release\",\n    \"description\":\"Q3 minor release\",\n    \"releaseDate\": \"2030-11-08T08:03:11.257Z\",\n    \"tickets\":[\n    \t{\n          \t\"title\":\"Find High Priority Orders\",\n          \t\"description\":\"Provide an easy way to locate high priority orders.\",\n          \t\"appId\":\"5c98ea55e5a85a2435d4cbc6\",\n          \t\"status\":\"In Process\"\n          }\n        ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/releases/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"releases",
+						"tickets"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/releases/tickets (Closed Tickets)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"December Release\",\n    \"description\":\"The last release of the year.\",\n    \"tickets\":[\n    \t{\n          \t\"title\":\"Add Email Notification Feature\",\n          \t\"description\":\"Email developer when ticket assigned\",\n          \t\"appId\":\"5c98ea55e5a85a2435d4cbc6\",\n          \t\"status\":\"Closed\"\n          }, \n          {\n          \t\"title\":\"Add text message notification\",\n          \t\"description\":\"Notify developer when build fails\",\n          \t\"appId\":\"5c98ea55e5a85a2435d4cbc5\",\n          \t\"status\":\"Closed\"\n          }\n        ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/releases/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"releases",
+						"tickets"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/releases/status/Closed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/releases/status/Closed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"releases",
+						"status",
+						"Closed"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/releases/5cad30c94f29ee4067481f04",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"December Release - Updated\",\n    \"description\":\"The last release of the year.\",\n    \"tickets\":[\n    \t{\n          \t\"title\":\"Add Email Notification Feature - Updated\",\n          \t\"description\":\"Email developer when ticket assigned\",\n          \t\"appId\":\"5c98ea55e5a85a2435d4cbc6\",\n          \t\"status\":\"Closed\"\n          }, \n          {\n          \t\"title\":\"Add text message notification\",\n          \t\"description\":\"Notify developer when build fails\",\n          \t\"appId\":\"5c98ea55e5a85a2435d4cbc5\",\n          \t\"status\":\"Closed\"\n          }\n        ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/releases/5cad30c94f29ee4067481f04",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"releases",
+						"5cad30c94f29ee4067481f04"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/releases/costs/5cad20644f29ee3eae6eea48",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/releases/costs/5cad20644f29ee3eae6eea48",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"releases",
+						"costs",
+						"5cad20644f29ee3eae6eea48"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/releases/costs/5cad30c94f29ee4067481f04",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/releases/costs/5cad30c94f29ee4067481f04",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"releases",
+						"costs",
+						"5cad30c94f29ee4067481f04"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\":\"keshawilliams\",\n\t\"firstName\":\"Kesha\",\n\t\"lastName\":\"Williams\",\n\t\"email\":\"keshaw@xyz.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"user"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tza/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"user"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tza/retire/application - Transaction",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\" : \"5cad3a074f29ee42cc19a338\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/tza/retire/application",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tza",
+						"retire",
+						"application"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

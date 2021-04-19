@@ -1,0 +1,10 @@
+db.createCollection("application");
+db.createCollection("ticket");
+db.createCollection("release");
+
+db.application.insertMany([{"name":"Trackzilla","description":"Bug tracking app","owner":"Kesha Williams"},{"name":"Order Management","description":"Track orders","owner":"Jane Doe"},
+{"name":"Expenses","description":"Track business expenses","owner":"Mary Richards"}
+])
+
+db.ticket.insertMany([{"title":"Query Feature Needed","description":"Add ability to query","appId":"5cad160a8b18c16c1d901b83", "status":"Open"},{"title":"Sort Feature Needed","description":"Add ability to sort results","appId":"5cad160a8b18c16c1d901b84", "status":"Open"}
+])
