@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ApplicationServices {
+public class DBService {
 
     @Autowired
     private MongoTemplate mongoTemplate;
@@ -22,4 +22,6 @@ public class ApplicationServices {
         update.set("name","Post master");
         mongoTemplate.updateFirst(query, update, Application.class);
     }
+
+
 }

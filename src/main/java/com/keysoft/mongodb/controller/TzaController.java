@@ -4,7 +4,7 @@ import com.keysoft.mongodb.model.Application;
 import com.keysoft.mongodb.model.Release;
 import com.keysoft.mongodb.model.Ticket;
 import com.keysoft.mongodb.repositories.ApplicationRepository;
-import com.keysoft.mongodb.repositories.ApplicationServices;
+import com.keysoft.mongodb.repositories.DBService;
 import com.keysoft.mongodb.repositories.ReleaseRepository;
 import com.keysoft.mongodb.repositories.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class TzaController {
     private TicketRepository ticketRepository;
 
     @Autowired
-    private ApplicationServices applicationServices;
+    private DBService dbService;
 
     // ************** Methods for Applications *************************
     @RequestMapping(value = "/applications", method = RequestMethod.GET)
@@ -64,7 +64,7 @@ public class TzaController {
 
     @RequestMapping(value = "/applications/template", method = RequestMethod.PUT)
     public void updateApplicationWithCriteria(@RequestBody Application application) {
-        applicationServices.updateApplicationWithCriteria(application);
+        dbService.updateApplicationWithCriteria(application);
     }
 
     // ************** Methods for Tickets *************************
@@ -132,6 +132,11 @@ public class TzaController {
     @RequestMapping(value = "/releases/{id}", method = RequestMethod.DELETE)
     public void deleteRelease(@PathVariable("id") String id) {
         releaseRepository.deleteById(id);
+    }
+
+    @RequestMapping(value = "/releases/status/{status}", method = RequestMethod.GET)
+    public List<Release> getReleaseByTicketStatus(@PathVariable String status) {
+        return releaseRepository.findAll();
     }
 
 }
