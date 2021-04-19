@@ -136,7 +136,7 @@ public class TzaController {
 
     @RequestMapping(value = "/releases/status/{status}", method = RequestMethod.GET)
     public List<Release> getReleaseByTicketStatus(@PathVariable String status) {
-        return releaseRepository.findAll();
+        return dbService.getReleaseByTicketStatus(status);
     }
 
 }
