@@ -15,7 +15,28 @@ import java.util.List;
 public class DBService {
 
     @Autowired
+    private ApplicationRepository applicationRepository;
+
+    @Autowired
+    private ReleaseRepository releaseRepository;
+
+    @Autowired
+    private TicketRepository ticketRepository;
+
+    @Autowired
     private MongoTemplate mongoTemplate;
+
+    public ApplicationRepository getApplicationRepository() {
+        return applicationRepository;
+    }
+
+    public ReleaseRepository getReleaseRepository() {
+        return releaseRepository;
+    }
+
+    public TicketRepository getTicketRepository() {
+        return ticketRepository;
+    }
 
     public void updateApplicationWithCriteria(Application application){
         Query query = new Query();
