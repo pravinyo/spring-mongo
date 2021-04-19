@@ -107,6 +107,11 @@ public class TzaController {
         return count;
     }
 
+    @GetMapping(value = "/tickets/appId/{appId}")
+    public List<Ticket> findTicketsByApplicationId(@PathVariable String appId){
+        return ticketRepository.findByAppId(appId);
+    }
+
     // ************** Methods for Releases *************************
     @RequestMapping(value = "/releases", method = RequestMethod.GET)
     public List<Release> getAllReleases() {

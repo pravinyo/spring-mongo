@@ -14,4 +14,6 @@ public interface TicketRepository extends MongoRepository<Ticket, String> {
 
     @Query("{'status': ?0 }")
     Stream<Ticket> findAllCustomerQueryAndStream(String status);
+
+    List<Ticket> findByAppId(String appId);
 }
