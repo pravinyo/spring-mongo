@@ -44,4 +44,9 @@ public class DBService {
         if (release!=null)  return release.getEstimatedCosts();
         return defaultCost;
     }
+
+    public Release insertReleaseWithTicket(Release release) {
+        mongoTemplate.insert(release);
+        return release;
+    }
 }

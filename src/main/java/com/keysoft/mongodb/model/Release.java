@@ -1,12 +1,12 @@
 package com.keysoft.mongodb.model;
 
-import java.time.LocalDate;
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+
+import java.time.ZonedDateTime;
+import java.util.List;
 
 @Document
 public class Release {
@@ -18,7 +18,7 @@ public class Release {
 
     @Field("release_tickets")
     private List<Ticket> tickets;
-    private LocalDate releaseDate;
+    private ZonedDateTime releaseDate;
 
     @Transient //don't save in db
     private Double estimatedCosts;
@@ -27,18 +27,18 @@ public class Release {
 
     }
 
-    public Release(String name, String description, List<Ticket> tickets, LocalDate releaseDate) {
+    public Release(String name, String description, List<Ticket> tickets, ZonedDateTime releaseDate) {
         this.name = name;
         this.description = description;
         this.tickets = tickets;
         this.releaseDate = releaseDate;
     }
 
-    public LocalDate getReleaseDate() {
+    public ZonedDateTime getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(LocalDate releaseDate) {
+    public void setReleaseDate(ZonedDateTime releaseDate) {
         this.releaseDate = releaseDate;
     }
 

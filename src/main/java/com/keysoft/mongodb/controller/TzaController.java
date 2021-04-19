@@ -128,6 +128,11 @@ public class TzaController {
         return releaseRepository.save(release);
     }
 
+    @PutMapping(value = "/releases/tickets")
+    public Release addNewReleaseWithTicket(@RequestBody Release release){
+        return dbService.insertReleaseWithTicket(release);
+    }
+
     @RequestMapping(value = "/releases/{id}", method = RequestMethod.PUT)
     public Release updateRelease(@PathVariable("id") String id, @RequestBody Release release){
         release.setId(id);
