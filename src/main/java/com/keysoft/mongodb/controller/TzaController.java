@@ -144,4 +144,9 @@ public class TzaController {
         return dbService.getReleaseByTicketStatus(status);
     }
 
+    @RequestMapping(value = "/releases/costs/{id}", method = RequestMethod.GET)
+    public Double getReleaseCost(@PathVariable String id) {
+        return dbService.getReleaseCost(id);
+    }
+
 }

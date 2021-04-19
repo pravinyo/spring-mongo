@@ -38,4 +38,10 @@ public class DBService {
     }
 
 
+    public Double getReleaseCost(String id) {
+        Double defaultCost = 0.0;
+        Release release = mongoTemplate.findById(id,Release.class);
+        if (release!=null)  return release.getEstimatedCosts();
+        return defaultCost;
+    }
 }
