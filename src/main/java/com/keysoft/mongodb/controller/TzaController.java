@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @RestController
 @RequestMapping(value = "/tza")
@@ -86,6 +87,14 @@ public class TzaController {
     @GetMapping(value = "/tickets/status/{status}")
     public List<Ticket> findByStatus(@PathVariable("status") String status){
         return ticketRepository.findByStatus(status);
+    }
+
+    @GetMapping(value = "/tickets/count")
+    public Long countAllTickets(){
+        Stream<Ticket> stream =  ticketRepository.findAllCustomerQueryAndStream("Open");
+        Long count = stream.count();
+        stream.close();
+        return count;
     }
 
     // ************** Methods for Releases *************************
