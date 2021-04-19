@@ -4,6 +4,7 @@ import com.keysoft.mongodb.model.Application;
 import com.keysoft.mongodb.model.Release;
 import com.keysoft.mongodb.model.Ticket;
 import com.keysoft.mongodb.repositories.ApplicationRepository;
+import com.keysoft.mongodb.repositories.ApplicationServices;
 import com.keysoft.mongodb.repositories.ReleaseRepository;
 import com.keysoft.mongodb.repositories.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class TzaController {
 
     @Autowired
     private TicketRepository ticketRepository;
+
+    @Autowired
+    private ApplicationServices applicationServices;
 
     // ************** Methods for Applications *************************
     @RequestMapping(value = "/applications", method = RequestMethod.GET)
@@ -55,6 +59,12 @@ public class TzaController {
     @RequestMapping(value = "/applications/name/{name}", method = RequestMethod.GET)
     public List<Application> findByName(@PathVariable("name") String name) {
         return applicationRepository.findByName(name);
+    }
+
+
+    @RequestMapping(value = "/applications/template", method = RequestMethod.PUT)
+    public void updateApplicationWithCriteria(@RequestBody Application application) {
+        applicationServices.updateApplicationWithCriteria(application);
     }
 
     // ************** Methods for Tickets *************************
