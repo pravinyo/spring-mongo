@@ -113,6 +113,11 @@ public class TzaController {
         return dbService.getTicketRepository().findByAppId(appId);
     }
 
+    @GetMapping(value = "/tickets/search/{text}/page/{page}")
+    public List<Ticket> searchTicketsFor(@PathVariable String text, @PathVariable Integer page){
+        return dbService.searchInTickets(text, page);
+    }
+
     // ************** Methods for Releases *************************
     @RequestMapping(value = "/releases", method = RequestMethod.GET)
     public List<Release> getAllReleases() {
@@ -166,7 +171,6 @@ public class TzaController {
         logger.debug("Time: {}",zdt);
 
         return dbService.getTicketsWithReleaseDateGt(zdt, pageNum);
-//        return zdt.toString();
     }
 
 }

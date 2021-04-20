@@ -9,10 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.data.mongodb.core.query.*;
 import org.springframework.stereotype.Service;
+import org.w3c.dom.Text;
 
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
@@ -94,5 +93,13 @@ public class DBService {
         List<Ticket> ticketList = new ArrayList<>();
         releaseList.forEach(release -> ticketList.addAll(release.getTickets()));
         return ticketList;
+    }
+
+    public List<Ticket> searchInTickets(String searchText, int page){
+        TextCriteria textCriteria = TextCriteria.forDefaultLanguage().matching(searchText);
+        Query query = TextQuery.queryText(textCriteria)
+                .sortByScore()
+                .with(PageRequest.of(page,3));
+        return mongoTemplate.find(query, Ticket.class);
     }
 }
