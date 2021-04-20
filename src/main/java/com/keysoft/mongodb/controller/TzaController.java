@@ -7,9 +7,16 @@ import com.keysoft.mongodb.repositories.ApplicationRepository;
 import com.keysoft.mongodb.repositories.DBService;
 import com.keysoft.mongodb.repositories.ReleaseRepository;
 import com.keysoft.mongodb.repositories.TicketRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -17,6 +24,8 @@ import java.util.stream.Stream;
 @RestController
 @RequestMapping(value = "/tza")
 public class TzaController {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass().getName());
 
     @Autowired
     private DBService dbService;
@@ -144,6 +153,20 @@ public class TzaController {
     @RequestMapping(value = "/releases/costs/{id}", method = RequestMethod.GET)
     public Double getReleaseCost(@PathVariable String id) {
         return dbService.getReleaseCost(id);
+    }
+
+    @GetMapping(value = "/releases/tickets/releaseDateGt/{date}/page/{pageNum}")
+    public List<Ticket> findTicketsForReleaseHavingDateGt(
+            @PathVariable String date,
+            @PathVariable Integer pageNum){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+                .withZone(ZoneOffset.UTC);
+        LocalDate dt = LocalDate.parse(date,formatter);
+        ZonedDateTime zdt = dt.atStartOfDay(ZoneOffset.UTC);
+        logger.debug("Time: {}",zdt);
+
+        return dbService.getTicketsWithReleaseDateGt(zdt, pageNum);
+//        return zdt.toString();
     }
 
 }
