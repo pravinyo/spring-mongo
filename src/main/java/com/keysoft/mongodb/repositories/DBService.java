@@ -102,4 +102,12 @@ public class DBService {
                 .with(PageRequest.of(page,3));
         return mongoTemplate.find(query, Ticket.class);
     }
+
+    public List<Release> findAllReleases(String field, int pageNb, int pageSize){
+        Query allPagedAndOrdered = new Query()
+                .with(Sort.by(Sort.Direction.ASC, field))
+                .with(PageRequest.of(pageNb, pageSize));
+
+        return mongoTemplate.find(allPagedAndOrdered, Release.class);
+    }
 }

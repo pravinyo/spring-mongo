@@ -124,6 +124,13 @@ public class TzaController {
         return dbService.getReleaseRepository().findAll();
     }
 
+    @RequestMapping(value = "/releases/{orderBy}/{pageSize}/{pageNb}", method = RequestMethod.GET)
+    public List<Release> getAllReleases(@PathVariable String orderBy,
+                                        @PathVariable int pageSize,
+                                        @PathVariable int pageNb) {
+        return dbService.findAllReleases(orderBy, pageNb, pageSize);
+    }
+
     @RequestMapping(value = "/releases/{id}", method = RequestMethod.GET)
     public Optional<Release> getReleaseId(@PathVariable("id") String id) {
         return dbService.getReleaseRepository().findById(id);
