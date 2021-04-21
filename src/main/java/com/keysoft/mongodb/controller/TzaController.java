@@ -25,7 +25,7 @@ import java.util.stream.Stream;
 @RequestMapping(value = "/tza")
 public class TzaController {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
 
     @Autowired
     private DBService dbService;
@@ -43,7 +43,7 @@ public class TzaController {
 
     @RequestMapping(value = "/applications", method = RequestMethod.POST)
     public Application addNewApplication(@RequestBody Application application){
-        return dbService.getApplicationRepository().save(application);
+        return dbService.getApplicationRepository().insert(application);
     }
 
     @RequestMapping(value = "/applications/{id}", method = RequestMethod.PUT)
@@ -81,7 +81,7 @@ public class TzaController {
 
     @RequestMapping(value = "/tickets", method = RequestMethod.POST)
     public Ticket addNewApplication(@RequestBody Ticket ticket){
-        return dbService.getTicketRepository().save(ticket);
+        return dbService.getTicketRepository().insert(ticket);
     }
 
     @RequestMapping(value = "/tickets/{id}", method = RequestMethod.PUT)
@@ -102,7 +102,8 @@ public class TzaController {
 
     @GetMapping(value = "/tickets/count")
     public Long countAllTickets(){
-        Stream<Ticket> stream =  dbService.getTicketRepository().findAllCustomerQueryAndStream("Open");
+        Stream<Ticket> stream =  dbService.getTicketRepository()
+                .findAllCustomerQueryAndStream("Open");
         Long count = stream.count();
         stream.close();
         return count;
@@ -138,7 +139,7 @@ public class TzaController {
 
     @RequestMapping(value = "/releases", method = RequestMethod.POST)
     public Release addNewRelease(@RequestBody Release release){
-        return dbService.getReleaseRepository().save(release);
+        return dbService.getReleaseRepository().insert(release);
     }
 
     @PutMapping(value = "/releases/tickets")
