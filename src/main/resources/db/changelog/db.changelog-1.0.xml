@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Pravin" id="changelog-1.0" context="test">
+        <modifyDataType
+                columnName="firstname"
+                newDataType="varchar(255)"
+                schemaName="chub_dev"
+                tableName="employee"/>
+        <rollback>
+            <modifyDataType
+                    columnName="firstname"
+                    newDataType="varchar(32)"
+                    schemaName="chub_dev"
+                    tableName="employee"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
